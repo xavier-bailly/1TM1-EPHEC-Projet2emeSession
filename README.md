@@ -4,6 +4,6 @@
 # Description du projet
 Site pour commander des bières. 
 Le client pourra voir quelle bière il achète.  
-Le client peut aussi interagir avec le site pour commander les bieres qu'il souhaite.
+Le client peut aussi interagir avec le site pour commander les bières qu'il souhaite.
 
 
