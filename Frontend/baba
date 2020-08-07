@@ -1,1 +1,91 @@
 
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="UTF-8">
+			<title>
+				Commander vos bières
+			</title>
+			<link rel="stylesheet" href="css/background.css">
+			<link rel="stylesheet" href="css/pop-up.css">
+			<script src="js/bulles.js"></script>
+			<script src="js/bar.js"></script>
+			<script src="js/pop-up.js"></script>
+		</head>
+		<body>
+			<header>
+				<a href="#" class="logo">Beer Shop</a>
+					<ul>
+						<li><a class="container" id="blur" href="#" onclick="toggle()"> À propos de Nous</a></li>
+						<li><a href="commande.html"> Commander</a></li>
+						<li><a href="#"> Nous Contacter</a></li>
+					</ul>
+				<div id="popup">
+					<h2>
+						Beer Shop
+					</h2>
+					<p>
+						Nous vendons des bières depuis plus de 20 ans.
+					</p>
+					<a  id="popfermer" href="#" onclick="toggle()"> Fermer</a>
+				</div>
+			</header>
+				<section id="bulles">
+				</section>
+			<div class="product1">
+				<div class="imgbox1">
+					<img src="img/beerkriek.png">
+				</div>
+				<div class="details1">
+					<h2>Marque<br><span>Kriek Mort Subite</span></h2>
+					<div class="price1">
+						1,60€
+					</div>
+					<label>
+						CL
+					</label>
+					<ul>
+						<li>25 cl</li>
+					</ul>
+					<a class="commander" href="commande.html">Commander</a>
+				</div>
+			</div>
+			<div class="product2">
+				<div class="imgbox2">
+					<img id="carlesberg" src="img/beercarlesberg.jpg">
+				</div>
+				<div class="details2">
+					<h2>Marque<br><span>Carlesberg</span></h2>
+					<div class="price2">
+						1,25€
+					</div>
+					<label>
+						CL
+					</label>
+					<ul>
+						<li>25 cl</li>
+					</ul>
+					<a class="commander" href="commande.html">Commander</a>
+				</div>
+			</div>
+			<div class="product3">
+				<div class="imgbox3">
+					<img id="jupiler" src="img/beerjupiler.jpg">
+				</div>
+				<div class="details3">
+					<h2>Marque<br><span>Jupiler pils</span></h2>
+					<div class="price3">
+						1,80€
+					</div>
+					<label>
+						CL
+					</label>
+					<ul>
+						<li>33 cl</li>
+					</ul>
+					<a class="commander" href="commande.html">Commander</a>
+				</div>
+			</div>
+			<img id="beergif" src="img/beergif.gif">
+		</body>
+	</html>
