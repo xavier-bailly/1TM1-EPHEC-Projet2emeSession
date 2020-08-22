@@ -1,33 +1,4 @@
 
-create table biere (
-    nom char(30) not null,
-    genre char(30) not null,
-	biereId integer not null default autoincrement
-    CONSTRAINT PK_nom PRIMARY KEY (nom)
-);
-
-create table prix(
-    biereId integer not null default autoincrement
-    prix char(60) not null,
-    CONSTRAINT PK_prix PRIMARY KEY (genrId)
-	CONSTRAINT FK_biereId FOREIGN KEY (biereId) REFERENCES biere(biereId),
-);
-
-create table client (
-	nomC char(30) not null,
-    prenomC char(30) not null,
-    CONSTRAINT PK_nomC PRIMARY KEY (nomc),
-);
-
-create table myList (
-    nomC char(30) not null,
-    biereId integer not null,
-    prix integer not null,
-    CONSTRAINT PK_nombiereIdrating PRIMARY KEY (nomP, biereId),
-    CONSTRAINT FK_nomC FOREIGN KEY (nomC) REFERENCES client(nomC),
-    CONSTRAINT FK_prix FOREIGN KEY (prix) REFERENCES prix(prix),
-	CONSTRAINT FK_biereId FOREIGN KEY (biereId) REFERENCES biere(biereId)
-);
 
 CREATE DOMAIN "boolean" BIT NOT NULL DEFAULT 0 check(@col in( 0,1 ) );
 
