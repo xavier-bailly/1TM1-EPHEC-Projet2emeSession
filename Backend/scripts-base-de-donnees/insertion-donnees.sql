@@ -8,7 +8,7 @@ values
 		('4.00'),
 		('5.30'),
 		('7.99'),
-		('3.50');
+
 
 insert into biere
 		(nom,genre)
@@ -16,7 +16,6 @@ values
 		('Kriek','Alcolisé'),
 		('Blonde','Aloclisé'),
 		('brune','Alcolisé'),
-		('Chouffe','Non Alcolisé');
 
 insert into client
 		(nomC, prenomC,)
