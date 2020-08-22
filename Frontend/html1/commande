@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Commander vos bières
+        </title>
+        <link rel="stylesheet" href="css/background.css">
+        <link rel="stylesheet" href="css/pop-up.css">
+		<link rel="stylesheet" href="css/commande.css">
+        <script src="js/bulles.js"></script>
+        <script src="js/bar.js"></script>
+        <script src="js/pop-up.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="biere.html" class="logo">Beer Shop</a>
+            <ul>
+                <li><a class="container" id="blur" href="#" onclick="toggle()"> À propos de Nous</a></li>
+                <li><a href="biere.html"> Retourner a la page pricipale</a></li>
+                <li><a href="#"> Nous Contacter</a></li>
+            </ul>
+            <div id="popup">
+                <h2>
+                    Beer Shop
+                </h2>
+                <p>
+                    Nous vendons des bières depuis plus de 20 ans.
+                </p>
+                <a  id="popfermer" href="#" onclick="toggle()"> Fermer</a>
+            </div>
+        </header>
+        <section id="bulles">
+        </section>
+        <div>
+            <h1>
+
+            </h1>
+        </div>
+<script>
+		function send() {
+			if(validate()==false)
+			{
+				return;
+			}
+			if(validateRadio()==false)
+			{
+				alert("you have to select a size");
+				return;
+			}
+			if(validatePaymentMethod()==false)
+			{
+				alert("you have to choose a payment method");
+				return;
+			}
+			alert("your beer order has been sent.");
+			checkForm();
+			return;
+		}
+
+		function validate() {
+		let fields = [document.getElementById('cust'),document.getElementById('adr'),document.getElementById('city'),document.getElementById('phone')];
+		let err = 0;
+		for(i=0;i<fields.length;i++)
+		{
+			if(fields[i].value=="")
+			{
+				fields[i].style.backgroundColor="red";
+				err++;
+			}
+		}
+		if(err===0)
+		{
+			return true;
+		}
+		else
+		{
+			alert("please fill out all of the fields");
+			return false;
+		}
+		}
+
+
+		function validateRadio() {
+			if(document.form.sizes[0].checked)
+			{
+				return true;
+			}
+			if(document.form.sizes[1].checked)
+			{
+				return true;
+			}
+			if(document.form.sizes[2].checked)
+			{
+				return true;
+			}
+			if(document.form.sizes[3].checked)
+			{
+				return true;
+			}
+			if(document.form.sizes[4].checked)
+			{
+				return true;
+			}
+
+			return false;
+		}
+
+		function validatePaymentMethod() {
+			if (document.form.pay[0].checked)
+			{
+				return true;
+			}
+			if (document.form.pay[1].checked)
+			{
+				return true;
+			}
+			if (document.form.pay[2].checked)
+			{
+				return true;
+			}
+			return false;
+		}
+
+
+		function checkForm() {
+			var el = document.form.elements.length;
+			var txt = "";
+			for (i=0;i<el;i++)
+			{
+				let type = BeerForm.elements[i].type;
+				if (type == "radio" && BeerForm.elements[i].checked)
+				{
+					txt = txt + BeerForm.elements[i].value + "<br>";
+				}
+				if (type == "text" && BeerForm.elements[i].checked)
+				{
+					txt = txt + BeerForm.elements[i].value + "<br>";
+				}
+				if (type == "select-one")
+				{
+					var e = document.getElementById("sel");
+					var strUser = e.options[e.selectedIndex].text;
+					txt = txt + "Amount: " + e.options[e.selectedIndex].text + "<br>";
+				}
+			}
+			document.getElementById("lblValues").innerHTML = txt;
+		}
+
+
+
+
+
+
+	</script>
+
+		<form name="BeerForm"  id="haf" class="commande">
+			<div id="contien">
+			<h1>Beer order Form</h1>
+			<p>Name:<input name="customer" id="cust" size="50" type="text"></p><br>
+			<p>Address:<input name="address" id="adr" size="50" type="text"></p><br>
+			<p>City:<input name="city" id="city" size="50" type="text"></p><br>
+			<p>Phone:<input name="phone" id="phone" size="50" type="text"></p><br>
+			
+			<h4>Select the size of beer:</h4>
+			<div id="size">
+				<input name="sizes" type="radio" value="small">Small pint<br>
+				<input name="sizes" type="radio" value="medium">Medium pint<br>
+				<input name="sizes" type="radio" value="large">Large pint<br>
+				<input name="sizes" type="radio" value="5 liter">5 Litter<br>
+				<input name="sizes" type="radio" value="crate">Crate<br>
+			</div>
+
+			<h4>Select the type of beer:</h4>
+
+			<input name="type" type="radio" value="ale">mort subite<br>
+			<input name="type" type="radio" value="larger">carlsberg<br>
+			<input name="type" type="radio" value="ipa">jupiler<br>
+			
+			<h4>Amount:</h4>
+
+			<select id="sel">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+			
+			<h4>PAYMENT METHOD</h4>
+			<input name="pay" type="radio" value="visa">VISA<br>
+			<input name="pay" type="radio" value="invoice">INVOICE<br>
+			<input name="pay" type="radio" value="mastercard">MASTERCARD<br>
+			<br>
+			
+			<input type="button" value="SEND" onClick="send()">
+			<br>
+			<br>
+			<h4>Order Confirmation</h4>
+			<div id="lblValues"></div>
+			</div>
+		</form>
+
+
+
+	</body>
+</html>
