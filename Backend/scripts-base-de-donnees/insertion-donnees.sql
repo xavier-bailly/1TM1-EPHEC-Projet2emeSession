@@ -1,5 +1,5 @@
 insert into tbPrix
-		(prix,)
+		(prix)
 values
 		(1.60),
 		(1.25),
@@ -7,28 +7,21 @@ values
 
 
 insert into tbBiere
-		(nomBiere,prix)
+		(nomBiere,prixId)
 values
-		('Kriek',1.60),
-		('Carlesberg',1.25),
-		('Jupiler',1.80);
+		('Kriek',1),
+		('Carlesberg',2),
+		('Jupiler',3);
 
 
 insert into tbClient
-		(nomC, prenomP,nbcommande)
+		(nomC, prenomC,)
 values
 		('Bailly', 'Xavier'),
 		('Bbbbb','Aaaa'),
 		('lolilo','trololol');
 
 insert into tbCommande
-		(nbcommande, commandeId, biereId)
+		(nomC,nbcommande, biereId)
 values
-		(2,4,1);
-
-
-
-
-
-
-			
+		('Bailly',2,1);
