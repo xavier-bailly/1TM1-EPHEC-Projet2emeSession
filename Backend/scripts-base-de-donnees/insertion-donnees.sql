@@ -1,33 +1,30 @@
-
-
-CREATE DOMAIN "boolean" BIT NOT NULL DEFAULT 0 check(@col in( 0,1 ) );
-
-insert into prix
-		(prix)
+insert into tbPrix
+		(prix,)
 values
-		('4.00'),
-		('5.30'),
-		('7.99'),
+		(1.60),
+		(1.25),
+		(1.80);
 
 
-insert into biere
-		(nom,genre)
+insert into tbBiere
+		(nomBiere,prix)
 values
-		('Kriek','Alcolisé'),
-		('Blonde','Aloclisé'),
-		('brune','Alcolisé'),
+		('Kriek',1.60),
+		('Carlesberg',1.25),
+		('Jupiler',1.80);
 
-insert into client
-		(nomC, prenomC,)
+
+insert into tbClient
+		(nomC, prenomP,nbcommande)
 values
 		('Bailly', 'Xavier'),
 		('Bbbbb','Aaaa'),
 		('lolilo','trololol');
 
-insert into myList
-		(nomC, biereId, prix)
+insert into tbCommande
+		(nbcommande, commandeId, biereId)
 values
-		('Bailly',)
+		(2,4,1);
 
 
 
