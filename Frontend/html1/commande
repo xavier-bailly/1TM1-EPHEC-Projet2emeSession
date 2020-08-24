@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,14 +42,14 @@
 		<form name="BeerForm"  id="haf" class="commande">
 			<div id="contien">
 			<h1>Beer order Form</h1>
-			<p>Nom:<input name="customer" id="cust" size="50" type="text"></p><br>
-			<p>Prenom:<input name="address" id="adr" size="50" type="text"></p><br>
-			<p>City:<input name="city" id="city" size="50" type="text"></p><br>
-			<p>Phone:<input name="phone" id="phone" size="50" type="text"></p><br>
+			<p>Nom: <input name="customer" id="cust" size="50" type="text"></p><br>
+			<p>Prenom: <input name="address" id="adr" size="50" type="text"></p><br>
+			<p>City: <input name="city" id="city" size="50" type="text"></p><br>
+			<p>Phone: <input name="phone" id="phone" size="50" type="text"></p><br>
 			
 
 
-			<h4>Select the type of beer:</h4>
+			<h4>Sélectionner la bière que vous voulez:</h4>
 
 			<input name="type" type="radio" value="ale">mort subite<br>
 			<input name="type" type="radio" value="larger">carlsberg<br>
@@ -71,7 +72,6 @@
 			
 			<h4>METHOD DE PAYEMENT</h4>
 			<input name="pay" type="radio" value="visa">VISA<br>
-			<input name="pay" type="radio" value="invoice">INVOICE<br>
 			<input name="pay" type="radio" value="mastercard">MASTERCARD<br>
 			<br>
 			
