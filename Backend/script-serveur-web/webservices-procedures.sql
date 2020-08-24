@@ -1,3 +1,4 @@
+  
 CREATE FUNCTION "DBA"."getPath"()
 // renvoie le chemin (path) de la racine du site (où est située la base de données)
 returns long varchar
@@ -22,7 +23,7 @@ BEGIN
 	select xp_read_file(dba.getPath() || url || '.html'); // renvoyer page
 -- 
 END;
-COMMENT ON PROCEDURE "DBA"."http_getPage" IS 'D:\EPHEC\Programmation\DataBase\projetFinAnnee'; //modifier chemin
+COMMENT ON PROCEDURE "DBA"."http_getPage" IS 'E:\progra\projet 2 biere\biere.html'; //modifier chemin
 
 --
 
@@ -35,7 +36,7 @@ BEGIN
 	select xp_read_file(dba.getPath() || 'CSS\' || url); // renvoyer fichier css
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getCSS" IS 'D:\EPHEC\Programmation\DataBase\projetFinAnnee\css'; //modifier chemin
+COMMENT ON PROCEDURE "DBA"."http_getCSS" IS 'E:\progra\projet 2 biere\css'; //modifier chemin
 
 --
 
@@ -48,7 +49,7 @@ BEGIN
 	select xp_read_file(dba.getPath() || 'IMG\' || url);  // renvoyer image
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getIMG" IS 'D:\EPHEC\Programmation\DataBase\projetFinAnnee\img'; //modifier chemin
+COMMENT ON PROCEDURE "DBA"."http_getIMG" IS 'E:\progra\projet 2 biere\img'; //modifier chemin
 
 CREATE PROCEDURE "DBA"."http_getJS"(in url char(255))
 // renvoie le contenu du script js dont le nom (+ extension) est le paramètre url
@@ -59,7 +60,7 @@ BEGIN
 	select xp_read_file(dba.getPath() || 'js\' || url);                // renvoyer fichier javascript
 --
 END;
-COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'C:\Users\mikae\Documents\Projet6\js'; //modifier chemin
+COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'E:\progra\projet 2 biere\js'; //modifier chemin
 
 --
 
@@ -67,7 +68,7 @@ COMMENT ON PROCEDURE "DBA"."http_getJS" IS 'C:\Users\mikae\Documents\Projet6\js'
 CREATE SERVICE "page" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getPage(:url);
 
 CREATE SERVICE "css" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getCSS(:url);
-COMMENT ON SERVICE "css" IS 'D:\EPHEC\Programmation\DataBase\projetFinAnnee\css'; //modifier chemin
+COMMENT ON SERVICE "css" IS 'E:\progra\projet 2 biere\css'; //modifier chemin
 
 CREATE SERVICE "img" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getIMG(:url);
 
