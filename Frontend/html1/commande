@@ -12,6 +12,7 @@
         <script src="js/bulles.js"></script>
         <script src="js/bar.js"></script>
         <script src="js/pop-up.js"></script>
+		<script src="js/main.js"></script>
     </head>
     <body>
         <header>
@@ -69,21 +70,13 @@
 				<option value="9">9</option>
 				<option value="10">10</option>
 			</select>
-			
-			<h4>METHOD DE PAYEMENT</h4>
-			<input name="pay" type="radio" value="visa">VISA<br>
-			<input name="pay" type="radio" value="mastercard">MASTERCARD<br>
-			<br>
-			
-			<input type="button" value="SEND" onClick="send()">
+			</br>
+			<input type="submit" value="SEND" onClick="send()">
 			<br>
 			<br>
 			<h4>Order Confirmation</h4>
 			<div id="lblValues"></div>
 			</div>
 		</form>
-
-
-
 	</body>
 </html>
