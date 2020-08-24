@@ -7,3 +7,4 @@ Le client pourra voir quelle bière il achète.
 Le client peut aussi interagir avec le site pour commander les bières qu'il souhaite.
 
 
+![alt text](E:\progra\projet 2 biere/diag.png)
