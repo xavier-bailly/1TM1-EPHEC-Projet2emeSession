@@ -1,1 +1,36 @@
+/*
+tri les biere
+*/
+CREATE PROCEDURE DBA.biere_ord()
+BEGIN
+SELECT nomBiere
+FROM tbBiere
+JOIN tbBiere on tbClient.biereId = btBiere.biereId
+ORDER BY nomBIere
+END
 
+
+CREATE SERVICE "tri" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call DBA.biere_ord();
+
+/*creation de la procedure qui renvoie toutes bières présentes dans la base de donnée
+dans un objet json.
+*/
+CREATE PROCEDURE get_allBeer()
+result(nomBiere char(30), id int)
+BEGIN 
+	Call sa_set_http_header('Access-Control-Allow-Origin', '*');
+    select nomBiere, biereId from tbBiere
+    order by nomBiere ;
+end;
+
+/*
+creation du service qui renvoie tout les anime existant dans la base de donée
+ et leur ratio dans un objet json.
+*/
+create service "getAllBeer"
+    type 'JSON'
+    authorization off
+    methods 'get'
+    user "DBA"
+    url on
+as call get_allBeer();
