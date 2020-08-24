@@ -7,4 +7,4 @@ Le client pourra voir quelle bière il achète.
 Le client peut aussi interagir avec le site pour commander les bières qu'il souhaite.
 
 
-![alt text](https://github.com/xavier-bailly/1TM1-EPHEC-Projet2emeSession/edit/master/README.md/diag.png)
+![alt text](https://github.com/xavier-bailly/1TM1-EPHEC-Projet2emeSession/blob/master/Frontend/img/diag.PNG)
